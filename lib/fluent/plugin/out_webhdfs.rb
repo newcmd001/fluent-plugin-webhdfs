@@ -44,6 +44,8 @@ class Fluent::WebHDFSOutput < Fluent::TimeSlicedOutput
   CHUNK_ID_PLACE_HOLDER = '${chunk_id}'
   API_KEY_PLACE_HOLDER = '${api_key}'
   PLAYER_ID_PLACE_HOLDER = '${player_id}'
+  api_key = '1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a'
+  player_id = '1234567890'
 
   def initialize
     super
