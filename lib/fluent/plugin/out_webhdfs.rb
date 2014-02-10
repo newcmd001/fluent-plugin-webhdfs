@@ -42,6 +42,8 @@ class Fluent::WebHDFSOutput < Fluent::TimeSlicedOutput
   config_param :append, :bool, :default => true
 
   CHUNK_ID_PLACE_HOLDER = '${chunk_id}'
+  API_KEY_PLACE_HOLDER = '${api_key}'
+  PLAYER_ID_PLACE_HOLDER = '${player_id}'
 
   def initialize
     super
@@ -194,6 +196,10 @@ class Fluent::WebHDFSOutput < Fluent::TimeSlicedOutput
                 else
                   path_format(chunk.key).gsub(CHUNK_ID_PLACE_HOLDER, chunk_unique_id_to_str(chunk.unique_id))
                 end
+
+    $log.info "#{chunk.key}"
+    path_format(chunk.key).gsub(API_KEY_PLACE_HOLDER, api_key)
+    path_format(chunk.key).gsub(PLAYER_ID_PLACE_HOLDER, player_id)
 
     failovered = false
     begin
