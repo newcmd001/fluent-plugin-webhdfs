@@ -192,6 +192,11 @@ class Fluent::WebHDFSOutput < Fluent::TimeSlicedOutput
     end
   end
 
+  def emit(tag, es, chain)
+    sogamo_tag = 'apiKey_playerId'
+    super(tag, es, chain, sogamo_tag)
+  end
+
   def write(chunk)
     hdfs_path = if @append
                   path_format(chunk.key)
