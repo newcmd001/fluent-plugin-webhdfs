@@ -200,8 +200,8 @@ class Fluent::WebHDFSOutput < Fluent::TimeSlicedOutput
                 end
 
     $log.info "#{chunk.key}"
-    path_format(chunk.key).gsub(API_KEY_PLACE_HOLDER, api_key)
-    path_format(chunk.key).gsub(PLAYER_ID_PLACE_HOLDER, player_id)
+    #path_format(chunk.key).gsub(API_KEY_PLACE_HOLDER, api_key)
+    #path_format(chunk.key).gsub(PLAYER_ID_PLACE_HOLDER, player_id)
 
     failovered = false
     begin
